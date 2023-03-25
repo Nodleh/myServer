@@ -3,6 +3,9 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 8081;
 
+var loginRouter = require('./routes/login');
+app.use('/wxLogin',loginRouter);
+
 app.get('/', async (req, res) => {
   const username = req.query.username || 'myogeshchavan97';
   try {
